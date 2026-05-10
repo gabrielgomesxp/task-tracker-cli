@@ -1,0 +1,25 @@
+{
+  "name": "task-tracker-cli",
+  "version": "1.0.0",
+  "description": "CLI para rastrear e gerenciar tarefas usando arquivo JSON — construído apenas com módulos nativos do Node.js",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielgomesxp/task-tracker-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/gabrielgomesxp/task-tracker-cli/issues"
+  },
+  "homepage": "https://github.com/gabrielgomesxp/task-tracker-cli#readme"
+}
