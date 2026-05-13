@@ -1,34 +1,61 @@
-# 📝 Task Tracker CLI
+# Task Tracker CLI 🚀
 
-Uma ferramenta de linha de comando (CLI) para gerenciar suas tarefas diárias, construída inteiramente com **módulos nativos do Node.js**. Este projeto faz parte do meu aprendizado em Ciência da Computação, focado em fundamentos de Backend, persistência de dados e TDD.
+A robust and simple Command Line Interface (CLI) to manage your daily tasks, built with **Node.js** and zero external dependencies.
 
-## 🚀 Tecnologias e Conceitos
-- **Node.js**: Sem bibliotecas externas (Vanilla JS).
-- **FileSystem (fs)**: Persistência de dados em arquivos JSON.
-- **Node Test Runner**: Uso do runner nativo (`node --test`) para TDD.
-- **ESM (ECMAScript Modules)**: Organização moderna de código com `import`/`export`.
+This project was developed to demonstrate proficiency in Node.js native modules, File System (FS) manipulation, and clean architecture patterns.
 
-## 🏗️ Estrutura do Projeto (Método LEGO)
-O projeto é construído em peças independentes e testadas:
-- `src/storage.js`: Camada de persistência (Peça 1 - ✅)
-- `src/taskManager.js`: Lógica de negócio (Peça 2 - 🚧)
-- `src/cli.js`: Interface de linha de comando (Peça 3 - 📅)
+## ✨ Features
 
-## 🛠️ Como rodar
-### Pré-requisitos
-- Node.js (versão 20 ou superior recomendada para suporte total ao Test Runner nativo).
+- **Add** tasks with automatic ID generation.
+- **List** all tasks or filter by status (`todo`, `in-progress`, `done`).
+- **Update** task descriptions.
+- **Delete** tasks.
+- **Track Status**: Move tasks between `todo`, `in-progress`, and `done`.
+- **Persistent Storage**: All data is saved in a `tasks.json` file.
 
-### Instalação
+## 🛠️ Tech Stack
+
+- **Node.js**: Runtime environment.
+- **Native FS/Path**: For database management.
+- **Native Test Runner**: For unit testing.
+
+## 🚀 How to Use
+
+### 1. Installation
+Ensure you have [Node.js](https://nodejs.org/) installed (v18+ recommended).
+
 ```bash
-git clone [url-do-repositorio]
+# Clone the repository
+git clone https://github.com/gabrielgomesxp/task-tracker-cli.git
 cd task-tracker-cli
 ```
 
-### Testes
-Para garantir que as peças LEGO estão funcionando corretamente:
+### 2. Available Commands
+
+| Action | Command |
+| :--- | :--- |
+| **Add** | `node index.js add "Buy groceries"` |
+| **List All** | `node index.js list` |
+| **Filter List** | `node index.js list done` |
+| **Update** | `node index.js update 1 "New description"` |
+| **In Progress** | `node index.js mark-in-progress 1` |
+| **Done** | `node index.js mark-done 1` |
+| **Delete** | `node index.js delete 1` |
+
+## 🧪 Testing
+
+The project uses the native Node.js test runner. To run the test suite:
+
 ```bash
-npm test
+node --test tests/*.test.js
 ```
 
-## 📜 Licença
-Este projeto está sob a licença MIT.
+## 📂 Project Structure
+
+- `index.js`: Main entry point and CLI router.
+- `src/task-manager.js`: Business logic and state management.
+- `src/storage.js`: Data persistence layer (JSON).
+- `tests/`: Automated test suite.
+
+---
+Developed by [Gabriel Gomes](https://github.com/gabrielgomesxp)

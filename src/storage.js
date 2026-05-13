@@ -1,35 +1,32 @@
-/**
- * PEÇA LEGO: storage.js
- * Responsável pela persistência dos dados.
- */
 import fs from 'node:fs';
 
 /**
- * Salva o array de tarefas em um arquivo JSON.
- * @param {Array} tasks - Lista de objetos de tarefa.
- * @param {string} filePath - Caminho do arquivo (opcional).
+ * Persists the task list to a JSON file.
+ * @param {Array} tasks - List of task objects.
+ * @param {string} filePath - Target file path.
  */
 export function saveTasks(tasks, filePath = 'tasks.json') {
-  // TODO: Implementar a escrita usando fs.writeFileSync e JSON.stringify
   try {
-    fs.writeFileSync(filePath, JSON.stringify(tasks, null, 2), 'utf8');
+    const data = JSON.stringify(tasks, null, 2);
+    fs.writeFileSync(filePath, data, 'utf8');
   } catch (error) {
-    console.error('Erro ao salvar tarefas:', error);
+    throw new Error(`Failed to save tasks: ${error.message}`);
   }
 }
 
 /**
- * Lê o arquivo JSON e retorna o array de tarefas.
- * @param {string} filePath - Caminho do arquivo (opcional).
- * @returns {Array} - Lista de tarefas ou [] se arquivo não existir.
+ * Loads the task list from a JSON file.
+ * @param {string} filePath - Source file path.
+ * @returns {Array} - List of tasks or empty array if file missing.
  */
 export function loadTasks(filePath = 'tasks.json') {
-  // TODO: Implementar a leitura usando fs.readFileSync e JSON.parse
   try {
+    if (!fs.existsSync(filePath)) {
+      return [];
+    }
     const data = fs.readFileSync(filePath, 'utf8');
     return JSON.parse(data);
   } catch (error) {
-    console.error('Erro ao carregar tarefas:', error);
+    throw new Error(`Failed to load tasks: ${error.message}`);
   }
-  return [];
 }
