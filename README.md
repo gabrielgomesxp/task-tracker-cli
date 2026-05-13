@@ -1,61 +1,65 @@
 # Task Tracker CLI 🚀
 
-A robust and simple Command Line Interface (CLI) to manage your daily tasks, built with **Node.js** and zero external dependencies.
+Uma interface de linha de comando (CLI) simples e robusta para gerenciar suas tarefas diárias, construída com **Node.js** e zero dependências externas.
 
-This project was developed to demonstrate proficiency in Node.js native modules, File System (FS) manipulation, and clean architecture patterns.
+## 📖 Sobre o Projeto
 
-## ✨ Features
+Este projeto foi desenvolvido como parte de um roteiro de estudos focado em **JavaScript no Backend** e **Node.js**. O objetivo principal foi dominar o uso de módulos nativos e a lógica de persistência de dados em arquivos JSON.
 
-- **Add** tasks with automatic ID generation.
-- **List** all tasks or filter by status (`todo`, `in-progress`, `done`).
-- **Update** task descriptions.
-- **Delete** tasks.
-- **Track Status**: Move tasks between `todo`, `in-progress`, and `done`.
-- **Persistent Storage**: All data is saved in a `tasks.json` file.
+A jornada de desenvolvimento contou com o auxílio estratégico de **Inteligência Artificial (JARVIS)**, funcionando como um par de programação (Pair Programming) para acelerar o aprendizado, refinar a arquitetura e garantir as melhores práticas de codificação e testes.
 
-## 🛠️ Tech Stack
+## ✨ Funcionalidades
 
-- **Node.js**: Runtime environment.
-- **Native FS/Path**: For database management.
-- **Native Test Runner**: For unit testing.
+- **Adicionar** tarefas com geração automática de ID.
+- **Listar** todas as tarefas ou filtrar por status (`todo`, `in-progress`, `done`).
+- **Atualizar** descrições de tarefas.
+- **Remover** tarefas.
+- **Controle de Status**: Alterne tarefas entre `todo` (pendente), `in-progress` (em andamento) e `done` (concluído).
+- **Armazenamento Persistente**: Todos os dados são salvos em um arquivo `tasks.json`.
 
-## 🚀 How to Use
+## 🛠️ Tecnologias
 
-### 1. Installation
-Ensure you have [Node.js](https://nodejs.org/) installed (v18+ recommended).
+- **Node.js**: Ambiente de execução.
+- **Módulos Nativos (FS/Path)**: Para gerenciamento do banco de dados JSON.
+- **Runner de Testes Nativo**: Para garantir a integridade da lógica.
+
+## 🚀 Como Usar
+
+### 1. Instalação
+Certifique-se de ter o [Node.js](https://nodejs.org/) instalado (v18+ recomendado).
 
 ```bash
-# Clone the repository
+# Clone o repositório
 git clone https://github.com/gabrielgomesxp/task-tracker-cli.git
 cd task-tracker-cli
 ```
 
-### 2. Available Commands
+### 2. Comandos Disponíveis
 
-| Action | Command |
+| Ação | Comando |
 | :--- | :--- |
-| **Add** | `node index.js add "Buy groceries"` |
-| **List All** | `node index.js list` |
-| **Filter List** | `node index.js list done` |
-| **Update** | `node index.js update 1 "New description"` |
-| **In Progress** | `node index.js mark-in-progress 1` |
-| **Done** | `node index.js mark-done 1` |
-| **Delete** | `node index.js delete 1` |
+| **Adicionar** | `node index.js add "Comprar café"` |
+| **Listar Todas** | `node index.js list` |
+| **Filtrar Lista** | `node index.js list done` |
+| **Atualizar** | `node index.js update 1 "Nova descrição"` |
+| **Em Andamento** | `node index.js mark-in-progress 1` |
+| **Concluir** | `node index.js mark-done 1` |
+| **Remover** | `node index.js delete 1` |
 
-## 🧪 Testing
+## 🧪 Testes
 
-The project uses the native Node.js test runner. To run the test suite:
+O projeto utiliza o runner de testes nativo do Node.js. Para executar a suíte de testes:
 
 ```bash
 node --test tests/*.test.js
 ```
 
-## 📂 Project Structure
+## 📂 Estrutura do Projeto
 
-- `index.js`: Main entry point and CLI router.
-- `src/task-manager.js`: Business logic and state management.
-- `src/storage.js`: Data persistence layer (JSON).
-- `tests/`: Automated test suite.
+- `index.js`: Ponto de entrada principal e roteador da CLI.
+- `src/task-manager.js`: Lógica de negócio e gerenciamento de estado.
+- `src/storage.js`: Camada de persistência de dados (JSON).
+- `tests/`: Suíte de testes automatizados.
 
 ---
-Developed by [Gabriel Gomes](https://github.com/gabrielgomesxp)
+Desenvolvido por [Gabriel Gomes](https://github.com/gabrielgomesxp) com auxílio de IA.
